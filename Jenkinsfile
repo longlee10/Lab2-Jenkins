@@ -7,7 +7,7 @@ pipeline {
                 git 'https://github.com/longlee10/Lab2-Jenkins.git'
                 
                 // Build the Maven project
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
     }
