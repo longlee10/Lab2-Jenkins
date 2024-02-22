@@ -21,7 +21,7 @@ public class ServerController {
         if (currentTime.isBefore(LocalTime.NOON)) {
             return "Good morning Hoang";
         } else {
-            return "Good evening Hoang";
+            return "Good afternoon Hoang";
         }
     }
 }
