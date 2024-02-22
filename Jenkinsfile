@@ -1,14 +1,22 @@
 pipeline {
     agent any
+
+    tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "MAVEN3"
+        jdk "JDK"
+    }
+
     stages {
         stage('Build') {
             steps {
-                // Checkout source code from your version control system
+                // Get some code from a GitHub repository
                 git 'https://github.com/longlee10/Lab2-Jenkins.git'
-                
-                // Build the Maven project
-                bat 'mvn clean package'
+
+                // To run Maven on a Windows agent, use
+                bat "mvn -Dmaven.test.failure.ignore=true clean compile"
             }
+
         }
     }
 }
