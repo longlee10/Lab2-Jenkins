@@ -43,7 +43,9 @@ pipeline {
 
         stage('Docker login') {
             steps {
-                bat 'docker login -u longquan98 -p "Long98docker"'
+                script {
+                    bat 'docker login -u longquan98 -p "Long98docker"'
+                }
             }
         }
 
