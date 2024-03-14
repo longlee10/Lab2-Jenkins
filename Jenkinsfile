@@ -18,21 +18,12 @@ pipeline {
             }
         }
 
-        // stage('Code Coverage') {
-        //     steps {
-        //         // use Jacoco to generate code coverage report
-        //         bat 'mvn clean test jacoco:report'
-        //     }
-        // }
-
-        // stage('Add Dockerhub password to Jenkins') {
-        //     steps {
-        //         withCredentials([usernamePassword(credentialsId: 'Docker-hub')]) {
-        //             // do something with the credentials
-        //             bat 'docker login -u longquan98 -p $Long98docker'
-        //         }
-        //     }
-        // }
+        stage('Code Coverage') {
+            steps {
+                // use Jacoco to generate code coverage report
+                bat 'mvn clean test jacoco:report'
+            }
+        }
 
         stage('Docker build') {
             steps {
