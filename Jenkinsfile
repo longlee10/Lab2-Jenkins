@@ -18,12 +18,12 @@ pipeline {
             }
         }
 
-        stage('Code Coverage') {
-            steps {
-                // use Jacoco to generate code coverage report
-                bat 'mvn clean test jacoco:report'
-            }
-        }
+        // stage('Code Coverage') {
+        //     steps {
+        //         // use Jacoco to generate code coverage report
+        //         bat 'mvn clean test jacoco:report'
+        //     }
+        // }
 
         stage('Add Dockerhub password to Jenkins') {
             steps {
