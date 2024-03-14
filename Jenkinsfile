@@ -37,7 +37,7 @@ pipeline {
         stage('Docker build') {
             steps {
                 // build the docker image
-                bat 'docker build -t longquan98/maven .'
+                bat 'docker build -t longquan98/maven:v1 .'
             }
         }
 
@@ -52,7 +52,7 @@ pipeline {
         stage('Docker push') {
             steps {
                 // push the docker image to docker hub
-                bat 'docker push longquan98/maven'
+                bat 'docker push longquan98/maven:v1'
             }
         }
     }
